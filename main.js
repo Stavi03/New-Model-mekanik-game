@@ -11,6 +11,7 @@ window.addEventListener('load', function(){
         constructor(width, height){
             this.width = width;
             this.height = height;
+            this.speed = 3;
             this.player = new Player(this);
             this.Input = new InputHandler();
         }
