@@ -24,6 +24,31 @@ export class Background {
         this.game = game;
         this.widht = 1667;
         this.height = 500;
-        this.layer5image = layer5;
+        this.layer1image = document.getElementById('layer1');
+        this.layer2image = document.getElementById('layer2');
+        this.layer3image = document.getElementById('layer3');
+        this.layer4image = document.getElementById('layer4');
+        this.layer5image = document.getElementById('layer5');
+        this.layer1 = new layer(this.game, this.widht, this.height, 1, this.layer1image)
+        this.layer2 = new layer(this.game, this.widht, this.height, 1, this.layer2image)
+        this.layer3 = new layer(this.game, this.widht, this.height, 1, this.layer3image)
+        this.layer4 = new layer(this.game, this.widht, this.height, 1, this.layer4image)
+        this.layer5 = new layer(this.game, this.widht, this.height, 1, this.layer5image)
+        this.BackgroundLayers = [this.layer1, this.layer2, this.layer3, this.layer4, this.layer5,]
     }
+    update(){
+        this.BackgroundLayers.forEach(layer => {
+           layer.update();
+
+
+        
+        })
+    }
+    draw(context){
+        this.BackgroundLayers.forEach(layer => {
+           layer.draw(context);
+            
+
+        
+        })
 }
