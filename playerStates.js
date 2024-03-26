@@ -17,8 +17,9 @@ export class Sitting extends State {
         this.player = player;
     }
     enter(){
-        this.player.frameY = 3;  
-
+        this.player.maxFrame = 0;
+        this.player.maxFrame = 4;
+        this.player.frameY = 5; 
     }
     handleInput(input){
         if (input.includes('ArrowLeft') || input.includes('ArrowRight')){
@@ -34,8 +35,9 @@ export class Running extends State {
         this.player = player;
     }
     enter(){
+        this.player.maxFrame = 0;
+        this.player.maxFrame = 6;
         this.player.frameY = 3;  
-
     }
     handleInput(input){
         if (input.includes('ArrowDown')){
@@ -52,7 +54,9 @@ export class Running extends State {
             this.player = player;
         }
         enter(){
-            if(this.player.onGROUND()) this.player.vy -= 30;
+            if(this.player.onGround()) this.player.vy -= 25;
+            this.player.maxFrame = 0;
+            this.player.maxFrame = 6;
             this.player.frameY = 1;  
     
         }
@@ -70,11 +74,13 @@ export class Running extends State {
             this.player = player;
         }
         enter(){
-            this.player.frameY = 3;  
+            this.player.maxFrame = 0;
+            this.player.maxFrame = 6;
+            this.player.frameY = 2;  
     
         }
         handleInput(input){
-            if (this.player.onGROUND()){     
+            if (this.player.onGround()){     
                 this.player.setState(states.RUNNING); 
             }
     
