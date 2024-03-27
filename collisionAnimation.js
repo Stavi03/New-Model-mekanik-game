@@ -5,7 +5,7 @@ export class CollisionAnimation {
         this.spriteWidth = 100;
         this.spriteHeight = 90;
         this.sizeModifier = Math.random() + 0.5;
-        this.width = this.spriteWidth * this.sizeModifier.Modifier;
+        this.width = this.spriteWidth * this.sizeModifier;
         this.height = this.spriteHeight * this.sizeModifier;
         this.x = x - this.width * 0.5;
         this.y = y - this.width * 0.5;
@@ -18,7 +18,7 @@ export class CollisionAnimation {
 
     }
     draw(context){
-        context.drawImage(this.image, this.frameX * this.sprideWidth, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
+        context.drawImage(this.image, this.frameX * this.spriteWidth, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
 
     }
     update(deltaTime){
