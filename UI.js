@@ -23,16 +23,16 @@ export class UI {
             context.textAlign = 'center';
             context.font = this.fontSize * 2 + 'px ' + this.fontFamily;
             if (this.game.score > 5){
-                context.fillText('Mu-chib', this.game.width * 0.5, this.game.height 
+                context.fillText('KELAZ', this.game.width * 0.5, this.game.height 
                 * 0.5 - 20);
                 context.font = this.fontSize * 0.7 + 'px ' + this.fontFamily;
-                context.fillText('KELAZ', this.game.width * 0.5, this.game.height 
+                context.fillText('kamu berhasil', this.game.width * 0.5, this.game.height 
                 * 0.5 +20);
             } else {
-                context.fillText('Mu-chib', this.game.width * 0.5, this.game.height 
+                context.fillText('cupu banget sih!', this.game.width * 0.5, this.game.height 
                 * 0.5 - 20);
                 context.font = this.fontSize * 0.7 + 'px ' + this.fontFamily;
-                context.fillText('KALAH', this.game.width * 0.5, this.game.height 
+                context.fillText('coba lagi ya', this.game.width * 0.5, this.game.height 
                 * 0.5 +20); 
             }
         }
