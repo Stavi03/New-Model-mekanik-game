@@ -13,7 +13,7 @@ export class Player {
         this.frameX = 0;
         this.frameY = 0;
         this.maxFrame;
-        this.fps = 20;
+        this.fps = 15;
         this.frameInterval = 1000/this.fps;
         this.frameTimer = 0;
         this.speed = 0;
@@ -25,8 +25,8 @@ export class Player {
         this.currentState.handleInput(input)
         //Gerak Horizontal
         this.x += this.speed;
-        if (input.includes('ArrowRight')) this.speed = this.maxSpeed;
-        else if (input.includes('ArrowLeft')) this.speed = -this.maxSpeed;
+        if (input.includes('ArrowRight') && this.currentState !== this.states[6]) this.speed = this.maxSpeed;
+        else if (input.includes('ArrowLeft') && this.currentState !== this.states[6]) this.speed = -this.maxSpeed;
         else this.speed = 0
         // horizontal boundaries
         if (this.x < 0) this.x = 0;
@@ -73,6 +73,8 @@ export class Player {
                     this.game.score++;
                 } else {
                     this.setState(6, 0);
+                    this.game.lives --;
+                    if (this.game.lives <= 0) this.game.gameOver = true;
                 }
 
             }

@@ -7,7 +7,7 @@ import { UI } from './UI.js';
 window.addEventListener('load', function(){
     const canvas = document.getElementById('canvas1');
     const ctx = canvas.getContext('2d');
-    canvas.width = 500;
+    canvas.width = 900;
     canvas.height = 500;
 
     class Game{
@@ -31,8 +31,9 @@ window.addEventListener('load', function(){
             this.score = 0;
             this.fontColor = 'black';
             this.time = 0;
-            this.maxTime = 6000;
+            this.maxTime = 100000;
             this.gameOver = false;
+            this.lives = 5;
             this.player.currentState = this.player.states[0];
             this.player.currentState.enter();
         }
@@ -58,7 +59,7 @@ window.addEventListener('load', function(){
                 if (particle.markedForDeletion) this.particles.splice(index, 1);
             });
             if (this.particles.length > this.maxParticles) {
-                this.particles = this.particles.slice(0, this.maxParticles);
+                this.particles.length = this.maxParticles;
             }
             // handle collision sprites
             this.collisions.forEach((collision, index) => {
