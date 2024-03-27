@@ -14,6 +14,7 @@ class Particle {
 export class Dust extends Particle {
     constructor(game, x, y){
         super(game);
+        this.image = document.getElementById('dust');
         this.size = Math.random() * 10 + 10;
         this.x = x;
         this.y = y;
@@ -36,8 +37,8 @@ export class Splash extends Particle {
 export class Fire extends Particle {
     constructor(game, x, y){
         super(game);
-        this.image = document.getElementsById('fire');
-        this.size = Math.random() * 100 + 100;
+        this.image = document.getElementById('fire');
+        this.size = Math.random() * 50 + 50;
         this.x = x;
         this.y = y;
         this.speedx = 1;
