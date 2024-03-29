@@ -37,7 +37,7 @@ export class UI {
                 context.fillText('cupu banget sih!', this.game.width * 0.5, this.game.height 
                 * 0.5 - 20);
                 context.font = this.fontSize * 0.7 + 'px ' + this.fontFamily;
-                context.fillText('coba lagi ya', this.game.width * 0.5, this.game.height 
+                context.fillText('coba lagi ya Tekan "esc"', this.game.width * 0.5, this.game.height 
                 * 0.5 +20); 
             }
         }
